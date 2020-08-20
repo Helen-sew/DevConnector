@@ -1,7 +1,12 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'; //to connect component to redux - then export it below
+import { Link, Redirect } from 'react-router-dom';
+import { setAlert } from '../../actions/alert'; //to bring in the alert action and pass it below (in the connect())
+import { register } from '../../actions/auth';
+import PropTypes from 'prop-types';
 
-const Register = () => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
+  //destructure props
   //set initial state
   const [formData, setFormData] = useState({
     name: '',
@@ -18,10 +23,14 @@ const Register = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      console.log('Password is not match');
+      setAlert('Password do not match', 'danger');
     }
-    console.log('SUCCESS');
+    register({ name, email, password });
   };
+
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
 
   return (
     <Fragment>
@@ -83,7 +92,18 @@ const Register = () => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { setAlert, register })(Register);
+//connect() take in 2 things - state that we want to map and action object
 
 //post/create new user
 // const newUser = {
