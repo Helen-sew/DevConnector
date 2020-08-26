@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -16,7 +16,7 @@ const Profile = ({
   auth,
   match,
 }) => {
-  useState(() => {
+  useEffect(() => {
     getProfileById(match.params.id); //get the id from url
   }, [getProfileById, match.params.id]);
 
@@ -81,7 +81,7 @@ const Profile = ({
 };
 
 Profile.propTypes = {
-  profile: PropTypes.object.isRequired,
+  profile: PropTypes.array.isRequired,
   auth: PropTypes.object.isRequired,
   getProfileById: PropTypes.func.isRequired,
 };

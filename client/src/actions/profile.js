@@ -70,7 +70,7 @@ export const getGithubRepos = (username) => async (dispatch) => {
 
     dispatch({
       type: GET_REPOS,
-      paylaod: res.data,
+      payload: res.data,
     });
   } catch (err) {
     dispatch({
