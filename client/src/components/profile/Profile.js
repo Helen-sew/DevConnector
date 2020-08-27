@@ -81,7 +81,7 @@ const Profile = ({
 };
 
 Profile.propTypes = {
-  profile: PropTypes.array.isRequired,
+  profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   getProfileById: PropTypes.func.isRequired,
 };

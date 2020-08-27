@@ -1,4 +1,6 @@
-/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+/* Global Styles*/
 :root {
   --primary-color: #17a2b8;
   --dark-color: #343a40;
@@ -14,8 +16,8 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
+  font-family: 'Forum', cursive;
+  font-size: 1.2rem;
   line-height: 1.6;
   background-color: #fff;
   color: #333;
@@ -131,7 +133,7 @@ img {
   background: var(--light-color);
   color: #333;
   padding: 0.4rem 1.3rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: none;
   cursor: pointer;
   margin-right: 0.5rem;
@@ -216,6 +218,7 @@ img {
 
 .round-img {
   border-radius: 50%;
+  width: 80%;
 }
 
 .line {
@@ -226,7 +229,7 @@ img {
 
 /* Overlay */
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
   left: 0;
@@ -314,6 +317,7 @@ button {
 
 .navbar ul {
   display: flex;
+  font-size: 1.2rem;
 }
 
 .navbar a {
@@ -333,7 +337,7 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('./img/landingImg.jpg') no-repeat center center/cover;
+  background: url('./img/landing_2.jpg') no-repeat center center/cover;
   height: 100vh;
 }
 
