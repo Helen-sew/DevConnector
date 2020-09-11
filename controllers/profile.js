@@ -11,7 +11,7 @@ const config = require('config');
 
 //@route    GET /profile/me
 //@desc     Get current users profile
-//@access   Private
+//@access   Private (need token)
 router.get('/me', auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id }).populate(

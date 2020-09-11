@@ -13,7 +13,7 @@ const connectDB = async () => {
     console.log('MongoDB Connected');
   } catch (err) {
     console.log(err.message);
-    //exit process with failure
+    //to end Node.js process by using process.exit([exitcode]) method. 1 means - Exit process with 'failure' code
     process.exit(1);
   }
 };

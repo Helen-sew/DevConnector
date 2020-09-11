@@ -10,7 +10,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
-  token: localStorage.getItem('token'),
+  token: localStorage.getItem('token'), //to save token into local storage
   isAuthenticated: null,
   loading: true,
   user: null,
